@@ -1,0 +1,44 @@
+.navbar{
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    background-color: #fff;
+    position: fixed;
+    z-index: 1000;
+    max-width: 1000;
+    width: 100%;
+}
+
+#control div{
+    display: none;
+
+}
+
+
+
+
+
+.navbar a:hover{
+    background-color: transparent;
+}
+
+.navbar-nav li:hover > ul.dropdown-menu {
+    display: block;
+}
+.dropdown-submenu {
+    position:relative;
+}
+.dropdown-submenu>.dropdown-menu {
+    top:0;
+    left:100%;
+    margin-top:-6px;
+}
+
+.dropdown-menu > li > a:hover:after {
+    text-decoration: underline;
+    transform: rotate(-90deg);
+}
+
+
+
+

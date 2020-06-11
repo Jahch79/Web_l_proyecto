@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Amortización</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../CSS/nav_config.css">
+    <link rel="stylesheet" href="../CSS/banner.css">
+    <link rel="icon" href="SRC/img/icono.ico">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="../JS/amortizacion.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-light bg-light" style="border-bottom:1px solid #122BDA;">
+            <div class="container">
+                <a class="navbar-brand pb-2" href="../index.html">
+                    <img src="../SRC/img/bolsa-de-valores.png" alt="logo" width="80" height="80">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="../index.html">INICIO
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="anualidadVencida.html">ANUALIDAD VENCIDA</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="anualidadAnticipada.html">ANUALIDAD ANTICIPADA</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="anualidadDiferida.html">ANUALIDAD DIFERIDA</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="anualidadPerpetua.html">ANUALIDAD PERPETUA</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="amortizacion.html">AMORTIZACIÓN</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <section>
+        <div class="container">
+            <center>
+                <h2>Amortización</h2>
+            </center>
+            <br>
+            <p>
+                La amortización es un término económico que se refiere al proceso de la distribución de un valor duradero en el tiempo, algunos lo utilizan como sinónimo de depreciación según lo apliquen. Cuando se solicita un crédito o préstamo el cual se pretende pagar en abonos, cada uno de estos abonos está compuesto por intereses y parte de capital. A la acción de cancelar parte del capital en cada uno de los pagos se le llama amortización del crédito (UNID, 2010).
+            </p>
+            <br>
+            <div id="calculadora1">
+                <fieldset style="margin-bottom: 10px;">
+                    <div class="form-group" style="display: flex;justify-content: center; align-items: center;">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Monto<br>
+                                        <input type="number" name="monto" id="input_monto" min="1" style="width: 100%">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Cantidad de Cuotas<br>
+                                        <input type="number" name="cuotas" id="input_cuotas" min="1" max="1000"
+                                            style="width: 100%">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Tasa de Interés<br>
+                                        <input type="number" name="tasa" id="input_tasa" min="0.1" style="width: 100%">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Tipo de Tasa<br>
+                                        <select id="select_tasa_tipo" style="width: 100%">
+                                            <option value="mensual">Mensual</option>
+                                            <option value="anual">Anual</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Periodo de Pago<br>
+                                        <select id="select_periodo" style="width: 100%">
+                                            <option value="diario">Diario</option>
+                                            <option value="semanal">Semanal</option>
+                                            <option value="quincenal">Quincenal</option>
+                                            <option value="mensual" selected>Mensual</option>
+                                            <option value="bimestral">Bimestral</option>
+                                            <option value="trimestral">Trimestral</option>
+                                            <option value="cuatrimestral">Cuatrimestral</option>
+                                            <option value="semestral">Semestral</option>
+                                            <option value="anual">Anual</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><input type="button" value="Calcular" onclick="calcular();"
+                                            style="height: 50px; width: 100%"></th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+
+                </fieldset>
+
+
+                <div>
+                    <table class="table table-striped" id="table-2"
+                        style="width: 100%; text-align: right; border: 1px gray solid; border-collapse: collapse">
+                        <tr>
+                            <th>#</th>
+                            <th>Interés</th>
+                            <th>Abono al Capital</th>
+                            <th>Valor de la Cuota</th>
+                            <th>Saldo al Capital</th>
+                        </tr>
+                        <tbody id="tbody_1">
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </section>
+    <br>
+    <section>
+        <div class="container">
+            <center>
+                <h3>Bibliografía</h3>
+            </center>
+            <p>
+                •	Universidad Interamericana para el Desarrollo. (2010). Matemáticas financieras. Recuperado de: <a href="https://moodle2.unid.edu.mx/dts_cursos_mdl/lic/AE/MF/S08/MF08_Lectura.pdf">https://moodle2.unid.edu.mx/dts_cursos_mdl/lic/AE/MF/S08/MF08_Lectura.pdf</a>
+            </p>
+            <br>
+        </div>
+    </section>
+
+    <footer class="page-footer font-small unique-color-dark">
+
+        <!-- Copyright -->
+        <div style="background-color: black; color: blanchedalmond;" class="footer-copyright text-center py-3">
+        <p>Creado por: Juan Hernandez y Jesús Valdés</p>
+
+        </div>
+        <!-- Copyright -->
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Anualidad Anticipada</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../CSS/nav_config.css">
+    <link rel="stylesheet" href="../CSS/banner.css">
+    <link rel="icon" href="SRC/img/icono.ico">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="../JS/Anualidad.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-light bg-light" style="border-bottom:1px solid #122BDA;">
+            <div class="container">
+                <a class="navbar-brand pb-2" href="../index.html">
+                    <img src="../SRC/img/bolsa-de-valores.png" alt="logo" width="80" height="80">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="../index.html">INICIO
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="anualidadVencida.html">ANUALIDAD VENCIDA</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="anualidadAnticipada.html">ANUALIDAD ANTICIPADA</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="anualidadDiferida.html">ANUALIDAD DIFERIDA</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="anualidadPerpetua.html">ANUALIDAD PERPETUA</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="amortizacion.html">AMORTIZACIÓN</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <section>
+        <div class="container">
+            <center>
+                <h2>Anualidad Anticipada</h2>
+            </center>
+            <br>
+            <p>
+                Es aquella en la que el pago uniforme se hace al comienzo de cada período (mes, bimestre, trimestre, semestre, año; según haya sido convenida) (Fernandez, 2017).
+            </p>
+            <br>
+            <form>
+                <div class="form-group">
+                    <label for="sel1">Selecciona una Opción:</label>
+                    <select class="form-control" id="sel1">
+                        <option selected>Seleccione</option>
+                        <option value="vp">Capital Presente</option>
+                        <option value="vf">Capital Final</option>
+                        <option value="c">Cuota</option>
+                    </select>
+                    <br>
+                </div>
+            </form>
+
+            <div id="control">
+
+                <div id="vp">
+                    <form method="POST"
+                        oninput="resultado.value = parseFloat(vc.value) * ((1 - (Math.pow(1 + parseFloat(tsi.value/100), - parseFloat(tiemp.value))))/parseFloat(tsi.value/100)) * (1 + parseFloat(tsi.value/100))">
+
+                        <label for="">Valor de la Cuota:</label>
+                        <input id="vc" type="number" class="form-control">
+                        <br>
+                        <label for="">Tasa de Interés:</label>
+                        <input id="tsi" type="number" class="form-control">
+                        <br>
+                        <label for="">Tiempo:</label>
+                        <input id="tiemp" type="number" class="form-control">
+                        <br>
+                        <label for="">Resultado</label>
+                        <output class="form-control" type="number" name="resultado" for="vc tsi tiemp"></output>
+                        <br>
+                        <input type="reset", value="Limpiar">
+
+
+                    </form>
+
+
+                </div>
+
+                <div id="vf">
+                    <form method="POST"
+                        oninput="resultado1.value = parseFloat(vc1.value) * (((Math.pow(1 + parseFloat(tsi1.value/100),  parseFloat(tiemp1.value)))-1)/parseFloat(tsi1.value/100)) * (1 + parseFloat(tsi1.value/100))">
+
+                        <label for="">Valor de la Cuota:</label>
+                        <input id="vc1" type="number" class="form-control">
+                        <br>
+                        <label for="">Tasa de Interés:</label>
+                        <input id="tsi1" type="number" class="form-control">
+                        <br>
+                        <label for="">Tiempo:</label>
+                        <input id="tiemp1" type="number" class="form-control">
+                        <br>
+                        <label for="">Resultado</label>
+                        <output class="form-control" type="number" name="resultado1" for="vc1 tsi1 tiemp1"></output>
+                        <br>
+                        <input type="reset", value="Limpiar">
+
+
+                    </form>
+
+                </div>
+
+                <div id="c">
+                    <form method="POST"
+                        oninput="resultado2.value = parseFloat(vp.value) / (((1 - (Math.pow(1 + parseFloat(tsi2.value/100), - parseFloat(tiemp2.value))))/parseFloat(tsi2.value/100)) * (1 + parseFloat(tsi2.value/100)))">
+
+                        <label for="">Valor Presente:</label>
+                        <input id="vp" type="number" class="form-control">
+                        <br>
+                        <label for="">Tasa de Interés:</label>
+                        <input id="tsi2" type="number" class="form-control">
+                        <br>
+                        <label for="">Tiempo:</label>
+                        <input id="tiemp2" type="number" class="form-control">
+                        <br>
+                        <label for="">Resultado</label>
+                        <output class="form-control" type="number" name="resultado2" for="vp tsi2 tiemp2"></output>
+                        <br>
+                        <input type="reset", value="Limpiar">
+
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <br>
+    <section>
+        <div class="container">
+            <center>
+                <h3>Bibliografía</h3>
+            </center>
+            <p>
+                •	Fernández, J. (2017). Módulo Anualidades y amortizaciones: Financiación y refinanciación en moneda nacional y extranjera Aplicaciones. Recuperado de: <a href="https://repository.usta.edu.co/bitstream/handle/11634/9941/anualidades_amortizacion_5dic.pdf?sequence=1&isAllowed=y"> https://repository.usta.edu.co/bitstream/handle/11634/9941/anualidades_amortizacion_5dic.pdf?sequence=1&isAllowed=y </a>
+            </p>
+            <br>
+        </div>
+    </section>
+    <footer class="page-footer font-small unique-color-dark">
+
+        <!-- Copyright -->
+        <div style="background-color: black; color: blanchedalmond;" class="footer-copyright text-center py-3">
+        <p>Creado por: Juan Hernandez y Jesús Valdés</p>
+
+        </div>
+        <!-- Copyright -->
+
+
+
+    </footer>
+
+</body>
+
+</html>
